@@ -31,4 +31,18 @@ class CalculadoraIVATest {
         assertThrows(IllegalArgumentException.class,
                 () -> calculadora.calcularIVA(-50.0));
     }
+    // Ciclo 2: calcularTotalConIVA - Galo ---
+ @Test
+ void calcularTotalConIVA_montoValido_retornaTotalCorrecto() {
+ assertEquals(115.0, calculadora.calcularTotalConIVA(100.0), 0.001);
+ }
+ @Test
+ void calcularTotalConIVA_cero_retornaCero() {
+ assertEquals(0.0, calculadora.calcularTotalConIVA(0.0), 0.001);
+ }
+ @Test
+ void calcularTotalConIVA_montoNegativo_lanzaExcepcion() {
+ assertThrows(IllegalArgumentException.class,
+ () -> calculadora.calcularTotalConIVA(-10.0));
+ }
 }
