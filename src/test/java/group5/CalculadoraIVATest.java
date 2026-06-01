@@ -81,4 +81,22 @@ class CalculadoraIVATest {
         assertThrows(IllegalArgumentException.class,
                 () -> calculadora.estaExento(null));
     }
+
+
+    // Ciclo 5: calcularIVALote - DON Roberto Guaña
+    @Test
+    void calcularIVALote_listaValida_retornaSumaIVA() {
+        assertEquals(30.0, calculadora.calcularIVALote(
+                List.of(100.0, 100.0)), 0.001);
+    }
+    @Test
+    void calcularIVALote_listaVacia_retornaCero() {
+        assertEquals(0.0, calculadora.calcularIVALote(
+                List.of()), 0.001);
+    }
+    @Test
+    void calcularIVALote_listaNula_lanzaExcepcion() {
+        assertThrows(IllegalArgumentException.class,
+                () -> calculadora.calcularIVALote(null));
+    }
 }

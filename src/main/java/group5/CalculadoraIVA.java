@@ -1,5 +1,6 @@
 package group5;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -41,5 +42,12 @@ public class CalculadoraIVA {
             throw new IllegalArgumentException("Categoria invalida");
         return Set.of("ALIMENTOS", "MEDICAMENTOS", "EDUCACION")
                 .contains(categoria.toUpperCase());
+    }
+
+    // Ciclo 5 - Roberto
+    public double calcularIVALote(List<Double> montos) {
+        if (montos == null)
+            throw new IllegalArgumentException("Lista invalida");
+        return montos.stream().mapToDouble(this::calcularIVA).sum();
     }
 }
