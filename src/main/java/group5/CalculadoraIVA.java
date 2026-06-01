@@ -1,8 +1,5 @@
 package group5;
 
-import java.util.List;
-import java.util.Set;
-
 /**
  * CalculadoraIVA
  * Ciclo 1 (calcularIVA)          - Andres
@@ -21,4 +18,10 @@ public class CalculadoraIVA {
             throw new IllegalArgumentException("Monto invalido");
         return monto * TASA_IVA;
     }
+    // Ciclo 2 - Paul
+ public double calcularTotalConIVA(double monto) {
+ if (monto < 0)
+ throw new IllegalArgumentException("Monto invalido");
+ return monto + calcularIVA(monto);
+ }
 }
