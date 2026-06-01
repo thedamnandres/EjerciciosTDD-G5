@@ -45,4 +45,18 @@ class CalculadoraIVATest {
  assertThrows(IllegalArgumentException.class,
  () -> calculadora.calcularTotalConIVA(-10.0));
  }
+ // Ciclo 3: calcularMontoSinIVA - Pablo
+ @Test
+ void calcularMontoSinIVA_totalValido_retornaMontoOriginal() {
+ assertEquals(100.0, calculadora.calcularMontoSinIVA(115.0), 0.001);
+ }
+ @Test
+ void calcularMontoSinIVA_cero_retornaCero() {
+ assertEquals(0.0, calculadora.calcularMontoSinIVA(0.0), 0.001);
+ }
+ @Test
+ void calcularMontoSinIVA_totalNegativo_lanzaExcepcion() {
+ assertThrows(IllegalArgumentException.class,
+ () -> calculadora.calcularMontoSinIVA(-115.0));
+ }
 }

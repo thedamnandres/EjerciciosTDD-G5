@@ -24,4 +24,10 @@ public class CalculadoraIVA {
  throw new IllegalArgumentException("Monto invalido");
  return monto + calcularIVA(monto);
  }
+ // Ciclo 3 - Pablo
+ public double calcularMontoSinIVA(double total) {
+ if (total < 0)
+ throw new IllegalArgumentException("Monto invalido");
+ return total / (1 + TASA_IVA);
+ }
 }
